@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context="com.jsobral.dubbusstop.activities.ListStopDetail">
+
+    <LinearLayout
+        android:id="@+id/linear_layout_stop_info"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_detail_stop_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stop_id" />
+
+        <TextView
+            android:id="@+id/text_detail_stop_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="@string/stop_address" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_rti_headers"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/linear_layout_stop_info"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_detail_route_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/route" />
+
+        <TextView
+            android:id="@+id/text_detail_duetime_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/duetime" />
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list_stop_detail"
+        android:layout_below="@+id/linear_layout_rti_headers"/>
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Dub Bus Stop</string>
+    <string name="action_settings">Settings</string>
+    <string name="add">ADD</string>
+    <string name="stop_id">7125</string>
+    <string name="stop_address">Stop Address</string>
+    <string name="stop_number">Stop Number</string>
+    <string name="duetime">Due Time</string>
+    <string name="route">Route</string>
+    <string name="delete">Delete</string>
+</resources>
