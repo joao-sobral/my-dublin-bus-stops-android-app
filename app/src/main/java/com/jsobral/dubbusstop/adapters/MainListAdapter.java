@@ -74,6 +74,10 @@ public class MainListAdapter extends ArrayAdapter<BusStop> {
                 break;
 
             int dueTimeMin=0;
+
+            //adjust due time from 100 to 60, 15 minutes will be converted to 25, a quarter of circle
+            int adjustedclockDueTime =0;
+
             if(!result.getDueTime().startsWith("Due")) {
                 int hour = Integer.parseInt(result.getDueTime().substring(0, 2));
                 int min = Integer.parseInt(result.getDueTime().substring(3, 5));
@@ -81,12 +85,14 @@ public class MainListAdapter extends ArrayAdapter<BusStop> {
                 dueTime = dueTime.withMinute(min);
 
                 dueTimeMin = (int) now.until(dueTime, ChronoUnit.MINUTES);
+                adjustedclockDueTime = (100 * dueTimeMin)/60;
+
             }
 
             CircularProgressBar circularProgressBar = (CircularProgressBar)inflater.inflate(R.layout.circular_progress, null);
 
             int animationDuration = 2000; // 2500ms = 2,5s
-            circularProgressBar.setProgressWithAnimation(dueTimeMin,animationDuration);
+            circularProgressBar.setProgressWithAnimation(adjustedclockDueTime,animationDuration);
 
             circularProgressBar.setTitle(result.getRoute());
             circularProgressBar.setSubTitle(result.getDueTime());
